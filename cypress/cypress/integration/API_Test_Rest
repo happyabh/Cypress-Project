@@ -1,0 +1,19 @@
+cy.request ({
+
+method:'POST',
+
+Url: 'http://sentry-authn/v0/account-recovery-sessions',
+
+form:true,
+
+body: {
+	
+	"data": {
+    "type": "account_recovery_session",
+    "attributes": {
+      "option": "happyabhi007@gnail.com"
+    }
+  }
+})
+
+cy.getCookie('cypress-session-cookie').should('exist')
